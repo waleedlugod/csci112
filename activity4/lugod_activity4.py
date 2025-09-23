@@ -195,11 +195,11 @@ coll.update_many(
         "$set": {
             "credits": {
                 "producers": [
-                    "Jake Gosling",
-                    "Steve Robson",
-                    "Example",
-                    "Chris Leonard",
-                    "Paul Golder",
+                    {"name": "Jake Gosling"},
+                    {"name": "Steve Robson"},
+                    {"name": "Example"},
+                    {"name": "Chris Leonard"},
+                    {"name": "Paul Golder"},
                 ]
             }
         }
@@ -211,13 +211,13 @@ coll.update_many(
         "$set": {
             "credits": {
                 "producers": [
-                    "Ed Sheeran",
-                    "Steve Robson",
-                    "Jake Gosling",
-                    "Benny Blanco",
-                    "Rick Rubin",
-                    "Mike Elizondo",
-                    "Jimmy Napes",
+                    {"name": "Ed Sheeran"},
+                    {"name": "Steve Robson"},
+                    {"name": "Jake Gosling"},
+                    {"name": "Benny Blanco"},
+                    {"name": "Rick Rubin"},
+                    {"name": "Mike Elizondo"},
+                    {"name": "Jimmy Napes"},
                 ]
             }
         }
@@ -229,12 +229,12 @@ coll.update_many(
         "$set": {
             "credits": {
                 "producers": [
-                    "Ed Sheeran",
-                    "Steve Robson",
-                    "Benjamin Levin (Benny Blanco)",
-                    "Mike Elizondo",
-                    "Foy Vance",
-                    "Ryan Tedder",
+                    {"name": "Ed Sheeran"},
+                    {"name": "Steve Robson"},
+                    {"name": "Benjamin Levin (Benny Blanco)"},
+                    {"name": "Mike Elizondo"},
+                    {"name": "Foy Vance"},
+                    {"name": "Ryan Tedder"},
                 ]
             }
         }
@@ -246,20 +246,20 @@ coll.update_many(
         "$set": {
             "credits": {
                 "producers": [
-                    "Ed Sheeran",
-                    "Steve Robson",
-                    "Aaron Dessner",
-                    "Jacknife Lee",
-                    "Max Martin",
-                    "FRED",
-                    "Ben Kohn",
+                    {"name": "Ed Sheeran"},
+                    {"name": "Steve Robson"},
+                    {"name": "Aaron Dessner"},
+                    {"name": "Jacknife Lee"},
+                    {"name": "Max Martin"},
+                    {"name": "FRED"},
+                    {"name": "Ben Kohn"},
                 ]
             }
         }
     },
 )
 coll.update_many(
-    {"album": "subtract"}, {"$set": {"credits": {"producers": ["Dessner"]}}}
+    {"album": "subtract"}, {"$set": {"credits": {"producers": [{"name": "Dessner"}]}}}
 )
 coll.update_many(
     {"album": {"$ne": "autumn variations"}},
