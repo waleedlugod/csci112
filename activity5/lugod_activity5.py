@@ -9,8 +9,6 @@ collLocation = dbLocation["locationDetectionLog"]
 dbPromo = conn["promo"]
 collPromo = dbPromo["promoAvailments"]
 
-
-f = open("yup.txt", "w")
 pipelineYuppies = [
     {
         "$match": {
@@ -41,8 +39,7 @@ pipelineYuppies = [
         "$out": {"db": "marketing", "coll": "lugod_yuppiesPromo"},
     },
 ]
-for _ in collLocation.aggregate(pipelineYuppies):
-    f.write(f"{_}\n")
+collLocation.aggregate(pipelineYuppies)
 
 f = open("go.txt", "w")
 pipelineGoData = [
@@ -74,5 +71,6 @@ pipelineGoData = [
         "$out": {"db": "marketing", "coll": "lugod_goDataPromo"},
     },
 ]
-for _ in collPromo.aggregate(pipelineGoData):
-    f.write(f"{_}\n")
+collPromo.aggregate(pipelineGoData)
+
+conn.close()
